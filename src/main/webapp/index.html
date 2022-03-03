@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+#current{
+padding:10px;
+border: solid 2px black;
+margin-top:61px;
+
+}
+
+#transaction{
+padding:10px;
+border: solid 2px black;
+margin-top:61px;
+}
+
+.tabClass{
+color: white;
+width:49.8%;
+float:left;
+text-align: center;
+cursor: pointer;
+border: solid 1px black;
+}
+
+#createAccount{
+cursor: pointer;
+}
+
+/* Page Content */
+.content {padding:20px;}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>XYZ Bank</h1>
+</div>
+
+<div class="content" style="width:60%;margin-left:18%;">
+    <label id="note" style="display:none;color:#12df12;font-weight:bold;"></label>
+    <label id="errorNote" style="display:none;color:red;font-weight:bold;"></label><br><br>
+    <div style="width:100%">
+        <div id="currentTab" class="tabClass" style="background-color:#81934b;"><h3>Current Account</h3></div>
+        <div id="transactionTab" class="tabClass" style="background-color:#17447a;border-left:none;width:49.9%;"><h3>Transaction Details</h3></div>
+    </div>
+    <div id="current">
+        <form>
+            <label>Customer Id:</label><br>
+            <input type="text" id="customerId" ><br>
+            <label>Amount:</label><br>
+            <input type="text" id="amount" ><br><br>
+            <button id="createAccount"  type="button" >Open Current Account</button>
+        </form>
+    </div>
+
+    <div id="transaction" style="display:none;">
+        <form id="tran">
+            <label >Customer Id:</label><br>
+            <input type="text" id="customerTranId" ><br><br>
+            <button id="ShowTransaction" type="button" >Show Transaction</button>
+        </form>
+
+        <form id="tranDetail" style="display:none;">
+            <table style="width:100%">
+                <tr>
+                    <th style="width:50%">First Name :</th>
+                    <td id="fname"></td>
+                </tr>
+                <tr>
+                    <th>Last Name :</th>
+                    <td id="lname"></td>
+                </tr>
+                <tr>
+                    <th id="balanceLabel">Balance : </th>
+                    <td id="balance"></td>
+                </tr>
+                <tr>
+                    <th>Account Number : </th>
+                    <td id="accnum"></td>
+                </tr>
+
+            </table>
+        </form>
+
+        <br><form id="tranform" style="display:none;">
+        <label style="font-weight: bold;font-size:25px;">Transaction :</label><br><br>
+        <table style="width:100%">
+            <tr>
+                <th style="text-align:left;">Balance</th>
+                <th style="text-align:left;">Executed Date</th>
+                <th style="text-align:left;">Description</th>
+
+            </tr>
+            <tr>
+                <td id="amountTransaction">Rs. </td>
+                <td id="exDate"></td>
+                <td id="description"></td>
+
+
+            </tr>
+
+        </table>
+    </form>
+    </div>
+</div>
+
+</body>
+</html>
